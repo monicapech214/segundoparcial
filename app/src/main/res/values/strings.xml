@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">segundoparcial</string>
+    <string name="dialog_positive">"Aceptar"</string>
+    <string name="dialog_negative">"Cancelar"</string>
+</resources>

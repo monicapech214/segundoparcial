@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/saludo"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="3dp"
+        ></TextView>
+        <ImageView
+            android:id="@+id/accionimg"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            android:src="@drawable/accion"
+            ></ImageView>
+        <TextView
+            android:id="@+id/acciontxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center"
+            android:text="ACCION">
+        </TextView>
+        <ImageView
+            android:id="@+id/caricaturaimg"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            android:src="@drawable/caricatura"  ></ImageView>
+        <TextView
+            android:id="@+id/caricaturatxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center"
+            android:text="CARICATURA">
+        </TextView>
+        <ImageView
+            android:id="@+id/terrorimg"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            android:src="@drawable/terror"  ></ImageView>
+        <TextView
+            android:id="@+id/terrortxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center"
+            android:text="TERROR">
+        </TextView>
+
+
+</LinearLayout>
+
+</RelativeLayout>
