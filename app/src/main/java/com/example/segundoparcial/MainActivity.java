@@ -16,7 +16,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 Button ir_menu;
 SharedPreferences preferences;
-String nombre2, edad2, genero2;
+String nombre2, genero2;
+Integer edad2 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +46,10 @@ LeerDatos();
             @Override
             public void onClick(DialogInterface dialog, int which) {
                   String name = nombre.getText().toString();
-                  String edad = edad1.getText().toString();
+                  Integer edad = edad1.getText().length();
                 String genero = genero1.getText().toString();
-                Toast.makeText(getApplicationContext(),"Los datos guardados son:"+name+""+edad+""+genero, Toast.LENGTH_SHORT).show();
-              GuardarCredenciales(nombre.getText().toString(),edad1.getText().toString(),genero1.getText().toString());
+                Toast.makeText(getApplicationContext(),"Los datos guardados son:"+name+"  "+edad+" "+genero, Toast.LENGTH_LONG).show();
+              GuardarCredenciales(nombre.getText().toString(),edad1.getText().length(),genero1.getText().toString());
                Intent i= new Intent(getApplicationContext(),Menu.class);
                 startActivity(i);
             }
@@ -59,15 +60,15 @@ LeerDatos();
     private void LeerDatos() {
         preferences=getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         nombre2=preferences.getString("nombre","");
-        edad2=preferences.getString("edad","");
+        edad2=preferences.getInt("edad",0);
         genero2=preferences.getString("genero","");
     }
 
-    private void GuardarCredenciales(String nombreuser,String edaduser,String generouser) {
+    private void GuardarCredenciales(String nombreuser,Integer edaduser,String generouser) {
         preferences=getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor= preferences.edit();
         editor.putString("nombre",nombreuser);
-        editor.putString("edad",edaduser);
+        editor.putInt("edad",edaduser);
         editor.putString("genero",generouser);
         editor.commit();
     }

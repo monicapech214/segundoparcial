@@ -3,6 +3,7 @@ package com.example.segundoparcial;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,7 @@ public class Menu extends AppCompatActivity {
     String nombre;
     int edad;
     String genero;
-    int edadv;
+   // int edadv;
     TextView saludo,caricaturatext,terrortext,acciontext;
     ImageView caricatura, terror, accion;
     @Override
@@ -29,31 +30,34 @@ public class Menu extends AppCompatActivity {
         terrortext = (TextView) findViewById(R.id.terrortxt);
         acciontext = (TextView) findViewById(R.id.acciontxt);
         LeerDatos();
-        saludo.setText("Hola"+nombre+"De acuerdo a tu edad"+edad+"Las categorias disponibles son:");
-       edadv = edad;
+//        saludo.setText("Hola"+"De acuerdo a tu edad"+"Las categorias disponibles son:");
+
         verCategorias();
         caricatura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                Intent i= new Intent(getApplicationContext(),reproductor.class);
+                startActivity(i);
             }
         });
         terror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i= new Intent(getApplicationContext(),reproductor.class);
+                startActivity(i);
             }
         });
         accion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i= new Intent(getApplicationContext(),reproductor.class);
+                startActivity(i);
             }
         });
     }
 
     private void verCategorias() {
-        if(edadv < 12)
+        if(edad < 12)
         {
             caricatura.setVisibility(View.VISIBLE);
             terror.setVisibility(View.INVISIBLE);
@@ -62,7 +66,7 @@ public class Menu extends AppCompatActivity {
             terrortext.setVisibility(View.INVISIBLE);
             acciontext.setVisibility(View.INVISIBLE);
         }
-        if(edadv <18 && edadv > 12) {
+        if(edad <18 && edad > 12) {
             caricatura.setVisibility(View.VISIBLE);
             terror.setVisibility(View.INVISIBLE);
             accion.setVisibility(View.VISIBLE);
@@ -70,7 +74,7 @@ public class Menu extends AppCompatActivity {
             terrortext.setVisibility(View.INVISIBLE);
             acciontext.setVisibility(View.VISIBLE);
         }
-        if(edadv > 18 ) {
+        if(edad > 18 ) {
             caricatura.setVisibility(View.VISIBLE);
             terror.setVisibility(View.VISIBLE);
             accion.setVisibility(View.VISIBLE);
